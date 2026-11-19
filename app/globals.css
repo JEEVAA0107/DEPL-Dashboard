@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-teal: #345C64;
+  --deep-teal: #1F3F47;
+  --pure-white: #FFFFFF;
+  --light-mint: #DDF3F0;
+  --chart-teal: #2E9F92;
+  --coral-orange: #E96F50;
+  --light-bg: #F7FAFA;
+  --dark-text: #252B2E;
+}
+
+body {
+  background-color: #F7FAFA;
+  color: #252B2E;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbars for ERP Tables */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Sticky table header fix */
+thead.sticky th {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+tfoot.sticky td {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+}
+
+/* Print Styles for formatted ERP PDF export */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  header, footer, button, .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .overflow-x-auto {
+    overflow: visible !important;
+  }
+  table {
+    font-size: 8pt !important;
+    width: 100% !important;
+  }
+  thead {
+    display: table-header-group !important;
+  }
+  tr {
+    page-break-inside: avoid !important;
+  }
+}
