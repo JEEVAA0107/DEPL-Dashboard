@@ -12,11 +12,27 @@ dist/
 
 # Environment Variables & Secrets (Protects SQL Server ERP credentials)
 .env
+.env.*
 .env*.local
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Database, Backup & Dump Files
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.bak
+*.mdf
+*.ldf
+
+# Temporary & Cache Files
+*.tmp
+*.temp
+*.swp
+*.swo
 
 # TypeScript
 *.tsbuildinfo
